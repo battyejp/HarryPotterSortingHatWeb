@@ -55,11 +55,11 @@ padding-top: 140px;
 }
 
 
-#result {
+#result div {
   font-size: 20pt;
   color: red;
   position: relative;
-  animation: delayResult 5s ease-in 10s;
+  animation: delayResult 5s ease-in 5s;
   animation-name: fade;
   animation-fill-mode: both;
   animation-duration: 5s;
@@ -76,20 +76,36 @@ padding-top: 140px;
   background-color: black;
 }
 
-#Hufflepuffs, #Hufflepuff {
+td#Hufflepuffs div {
   color: yellow;
+  animation: delayResult 5s ease-in 5s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 10s;
 }
 
-#Slytherins, #Slytherin {
+td#Slytherins div {
   color:green;
+  animation: delayResult 5s ease-in 5s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 10s;
 }
 
-#Ravenclaws, #Ravenclaw {
+td#Ravenclaws div {
   color: blue
+  animation: delayResult 5s ease-in 5s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 10s;
 }
 
-#Gryffindors, #Gryffindor {
+td#Gryffindors div {
   color: red;
+  animation: delayResult 5s ease-in 5s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 10s;
 }
 
 table, th, td {

@@ -30,9 +30,9 @@ function resetName() {
 
 function allocateHouse(houseName, houseArray, houseId, nameInput) {
   console.log(houseName);
-  document.getElementById("result").innerHTML = nameInput + " you are in " + houseName + " house";
+  document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
   houseArray.push(nameInput);
-  document.getElementById(houseId).innerHTML = houseArray.join('</p> <p>');
+  document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</p> <p>') + "</div>";
   resetName();
 }
 

@@ -92,11 +92,6 @@ padding-top: 140px;
   color: red;
 }
 
-p {
-  display: inline;
-  padding-left: 35px;
-}
-
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;

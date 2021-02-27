@@ -4,20 +4,26 @@ let hufflepuffs = [];
 let slytherins = [];
 let ravenclaws = [];
 let gryffindors = [];
+hideElements(false);
+
+function hideElements(flag) {
+  document.getElementById("toHide").hidden = flag;
+}
 
 function clickOKNumber() {
   totalInHouse = document.getElementById('numberOfBeavers').value / 4;
   totalInHouse = Math.ceil(totalInHouse);
+  hideElements(true);
 }
 
-function IsHouseFull(houseNumber) {
+function isHouseFull(houseNumber) {
   // if (houseTotals[houseNumber] < totalInHouse) {
   //   return true;S
   // }
   // else {
   //   return false;
   // }
-  return houseTotals[houseNumber] < totalInHouse;
+  return houseTotals[houseNumber - 1] == totalInHouse;
 }
 
 function addtohouse(houseNumber) {
@@ -32,7 +38,7 @@ function allocateHouse(houseName, houseArray, houseId, nameInput) {
   console.log(houseName);
   document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
   houseArray.push(nameInput);
-  document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</p> <p>') + "</div>";
+  document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
   resetName();
 }
 
@@ -43,7 +49,7 @@ function clickOK() {
     houseNumber = Math.floor(Math.random() * 4) + 1;
     console.log(houseNumber);
   }
-  while (IsHouseFull(houseNumber))
+  while (isHouseFull(houseNumber))
   addtohouse(houseNumber);
   console.log(houseTotals);
 

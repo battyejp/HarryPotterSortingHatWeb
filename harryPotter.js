@@ -1,5 +1,4 @@
 let houseTotals = [0, 0, 0, 0];
-// let houseNumber = "";
 let totalInHouse = "";
 let hufflepuffs = [];
 let slytherins = [];

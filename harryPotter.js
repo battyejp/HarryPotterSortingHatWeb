@@ -38,11 +38,12 @@ function allocateHouse(houseName, houseArray, houseId, nameInput) {
 
 function clickOK() {
   let nameInput = document.getElementById('name').value;
+  let houseNumber;
   do {
-    let houseNumber = Math.floor(Math.random() * 4) + 1;
+    houseNumber = Math.floor(Math.random() * 4) + 1;
     console.log(houseNumber);
   }
-  while (IsHouseFull(housenumber))
+  while (IsHouseFull(houseNumber))
   addtohouse(houseNumber);
   console.log(houseTotals);
 

@@ -1,0 +1,108 @@
+table, td {
+  border: 1px solid black;
+  width: 400px;
+  height: 15px;
+  text-align: center;
+}
+#arrayToGuess {
+font-size: 50px; 
+height: 30px;
+padding-top: 140px;
+}
+
+@keyframes spin {
+
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
+  }
+}
+
+/*  The element to apply the animation to */
+/* div {
+  width: 100px;
+  height: 100px;
+  animation-name: hat;
+  animation: spin 6s infinite linear;
+} */
+.image {
+  padding-right: 400px;
+  float: right;
+  position: relative;
+}
+
+#lives {
+  position: absolute;
+  top: 40%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes delayResult {
+  from {left: 0px;}
+  to {left: 300px;}
+}
+
+@keyframes fade{
+  0% {
+    opacity: 0;
+}
+  100%{
+    opacity: 1;
+}
+}
+
+
+#result {
+  font-size: 20pt;
+  color: red;
+  position: relative;
+  animation: delayResult 5s ease-in 10s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 5s;
+  padding-bottom: 200pt;
+}
+
+  #return {
+  font-size: 20pt;
+  color: red;
+}
+
+
+.houses {
+  background-color: black;
+}
+
+#Hufflepuffs, #Hufflepuff {
+  color: yellow;
+}
+
+#Slytherins, #Slytherin {
+  color:green;
+}
+
+#Ravenclaws, #Ravenclaw {
+  color: blue
+}
+
+#Gryffindors, #Gryffindor {
+  color: red;
+}
+
+p {
+  display: inline;
+  padding-left: 35px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 15px;
+}
+
+caption {
+  text-align: left;
+}

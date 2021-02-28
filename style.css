@@ -93,7 +93,7 @@ td#Slytherins div {
 }
 
 td#Ravenclaws div {
-  color: blue
+  color: blue;
   animation: delayResult 5s ease-in 5s;
   animation-name: fade;
   animation-fill-mode: both;

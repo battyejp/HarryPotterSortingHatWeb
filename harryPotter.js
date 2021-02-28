@@ -4,6 +4,7 @@ let hufflepuffs = [];
 let slytherins = [];
 let ravenclaws = [];
 let gryffindors = [];
+let houseNumber = "";
 hideElements(false);
 
 function hideElements(flag) {
@@ -34,17 +35,41 @@ function resetName() {
   document.getElementById("name").value = "";
 }
 
-function allocateHouse(houseName, houseArray, houseId, nameInput) {
+function addBlankRowToTable() {
+  let table = document.getElementById("table");
+  let newRow = table.insertRow(table.length);
+  for (let j = 0; j < 4; j++) {
+    let cell = newRow.insertCell(j);
+    cell.innerHTML = "";
+  }
+}
+
+function updateCell(value, i, j) {
+  let table = document.getElementById("table");
+  let row = table.rows[i];
+
+  if (typeof row === 'undefined') {
+    addBlankRowToTable();
+    row = table.rows[i];
+  }
+
+  let cell = row.cells[j];
+  cell.innerHTML = value;
+}
+
+function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
   console.log(houseName);
-  document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
+  // document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
   houseArray.push(nameInput);
-  document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
+  // document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
+  //addBlankRowToTable();
+  updateCell(nameInput, houseArray.length, houseNumber);
   resetName();
 }
 
 function clickOK() {
   let nameInput = document.getElementById('name').value;
-  let houseNumber;
+
   do {
     houseNumber = Math.floor(Math.random() * 4) + 1;
     console.log(houseNumber);
@@ -54,7 +79,7 @@ function clickOK() {
   console.log(houseTotals);
 
   if (houseNumber === 1) {
-    allocateHouse("Hufflepuff", hufflepuffs, "Hufflepuffs", nameInput);
+    allocateHouse("Hufflepuff", hufflepuffs, "Hufflepuffs", nameInput, houseNumber - 1);
     // console.log("Hufflepuff");
     // document.getElementById("result").innerHTML = nameInput + " you are in Hufflepuff house";
     // hufflepuffs.push(nameInput);
@@ -62,14 +87,14 @@ function clickOK() {
     // resetName();
   }
   else if (houseNumber === 2) {
-    allocateHouse("Ravenclaw", ravenclaws, "Ravenclaws", nameInput);
+    allocateHouse("Ravenclaw", ravenclaws, "Ravenclaws", nameInput, houseNumber - 1);
   }
 
   else if (houseNumber === 3) {
-    allocateHouse("Slytherin", slytherins, "Slytherins", nameInput);
+    allocateHouse("Slytherin", slytherins, "Slytherins", nameInput, houseNumber - 1);
   }
   else {
-    allocateHouse("Gryffindor", gryffindors, "Gryffindors", nameInput);
+    allocateHouse("Gryffindor", gryffindors, "Gryffindors", nameInput, houseNumber - 1);
   }
 }
 

@@ -1,60 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Harry Potter Sorting Hat</title>
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <!-- <div class = "image">
-  <img id="hatImage" src="images.jpg" alt="Sorting Hat"/>
-  <p id="hat">
-  </div> -->
-  <p>
   <div id="toHide">
     Number of people to be sorted?
     <td><input id="numberOfBeavers" /></td>
     <td><button onclick="clickOKNumber()">OK</button></td>
   </div>
   Name:
-  <td><input id="name" /></td>
-  <td><button id="nameEntered" onclick="clickOK()">OK</button></td>
+  <input id="name" />
+  <button id="nameEntered" onclick="clickOK()">OK</button>
   <div class="image">
-    <img id="hatImage" src="images.jpg" alt="Sorting Hat" />
+    <img id="hatImage" src="images/images.jpg" alt="Sorting Hat" />
   </div>
-  <!-- <p id="guesses" hidden="true">
-      Guess a letter and click OK
-    <td>
-      <input id="answer" />
-    </td>
-    <td>
-      <button onclick="clickOK()">OK</button>
-    </td>
-    <div class = "guess">
-    <p id="arrayToGuess">
-    <p id="guessedLetters"> -->
   <div id="result" hidden="true">
   </div>
-  <!-- <table id="houses">
-    <caption>Houses</caption>
-    <tr>
-      <th>Hufflepuffs</th>
-      <th>Ravenclaws</th>
-      <th>Slytherins</th>
-      <th>Gryffindors</th>
-    </tr>
-    <tr>
-      <td id="Hufflepuffs"></td>
-      <td id="Ravenclaws"></td>
-      <td id="Slytherins"></td>
-      <td id="Gryffindors"></td>
-
-    </tr> -->
   <table id="table">
-
-    <!-- The Row Number 0 -->
     <tr>
       <th>Hufflepuffs</th>
       <th>Ravenclaws</th>
@@ -62,14 +26,6 @@
       <th>Gryffindors</th>
     </tr>
   </table>
-
-  <!-- <p id="Hufflepuffs">Hufflepuffs</p>
-  <p id="Ravenclaws">Ravenclaws</p>
-  <p id="Slytherins"> Slytherins</p>
-  <p id="Gryffindors">Gryffindors</p> -->
-
-  <script src="harryPotter.js"></script>
-
+  <script src="js/harryPotter.js"></script>
 </body>
-
 </html>

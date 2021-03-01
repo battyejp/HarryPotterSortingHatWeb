@@ -1,12 +1,10 @@
 class SortingHat {
     constructor(houseNames, totalAllowedInHouse) {
         this.houses = [];
-        let count = 0;
 
-        for(let houseName in houseNames) {
-            this.houses.push(new House(houseName, totalAllowedInHouse, count));
-            count++
-        }
+        houseNames.forEach((item, index) => {
+            this.houses.push(new House(item, totalAllowedInHouse, index));
+        });
     }
 
     allocateChildToRandomHouse(name){

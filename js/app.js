@@ -14,16 +14,21 @@ function totalChildrenEntered() {
 }
 
 function childNameEntered() {
+    let button = document.getElementById('nameEntered');
     let childName = document.getElementById('name').value
+    button.disabled  = true;
     let house = sortingHat.allocateChildToRandomHouse(childName);
     updateCell(childName, house.houseNumber, house.children.length);
+    let audioHelper = new AudioHelper('audio/');
+    audioHelper.playRandomSoundForHouse(house.name, () =>{
+        button.disabled = false;
+    });
 }
 
 function addTheadRow(houseNames) {
     let table = document.getElementById("table");
     let header = table.createTHead();
     let newRow = header.insertRow(0);
-    let j = 0;
 
     houseNames.forEach((item, index) =>{
         let cell = newRow.insertCell(index);

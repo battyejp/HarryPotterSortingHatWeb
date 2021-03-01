@@ -73,42 +73,42 @@ padding-top: 140px;
 
 td#Hufflepuffs {
   color: yellow;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 10s;
+  animation-duration: 2s;
 }
 
 td#Slytherins {
   color:green;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 10s;
+  animation-duration: 2s;
 }
 
 td#Ravenclaws {
   color: blue;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 10s;
+  animation-duration: 2s;
 }
 
 td#Gryffindors {
   color: red;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 10s;
+  animation-duration: 2s;
 }
 
 td {
   color: red;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 10s;
+  animation-duration: 2s;
 }
 
 table, th, td {

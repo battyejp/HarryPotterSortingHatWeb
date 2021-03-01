@@ -33,8 +33,8 @@ function addtohouse(houseNumber) {
 
 function resetName() {
   document.getElementById("name").value = "";
-  result.hidden = true;
 }
+
 
 function addBlankRowToTable() {
   let table = document.getElementById("table");
@@ -49,7 +49,7 @@ function addBlankRowToTable() {
 //   sound.Play();
 // }
 
-function updateCell(value, i, j) {
+function updateCell(value, j, i) {
   let table = document.getElementById("table");
   let row = table.rows[i];
 
@@ -62,24 +62,28 @@ function updateCell(value, i, j) {
   cell.innerHTML = value;
 }
 
-function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
-  console.log(houseName);
+function showHouse(houseName, nameInput, houseNumber, houseArray) {
   document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
-  houseArray.push(nameInput);
-  // document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
-  updateCell(nameInput, houseArray.length, houseNumber);
+  updateCell(nameInput, houseNumber, houseArray.length);
+  let result = document.getElementById("result");
+  result.classList.add("result");
+  result.hidden = false;
   resetName();
-  stall(houseName);
 }
 
-function playSound(sound1, houseName) {
+function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
+  console.log(houseName);
+  houseArray.push(nameInput);
+  // document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
+  playAudio(houseName, nameInput, houseNumber, houseArray);
+}
+
+function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
   let audio = new Audio(sound1);
   audio.play();
   audio.addEventListener('ended', function () {
-    let result = document.getElementById("result");
-    result.classList.add("result");
-    result.hidden = false;
     window.setTimeout(function () {
+      showHouse(houseName, nameInput, houseNumber, houseArray);
       let soundFile = houseName.toLowerCase() + '.wav';
       let audio = new Audio(soundFile);
       audio.play();
@@ -88,27 +92,28 @@ function playSound(sound1, houseName) {
 
 }
 
-function stall(houseName) {
+function playAudio(houseName, nameInput, houseNumber, houseArray) {
   audioNumber = Math.floor(Math.random() * 5) + 1;
   if (audioNumber === 1) {
-    playSound('ahright.wav', houseName);
+    playSound('ahright.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 2) {
-    playSound('difficult.wav', houseName);
+    playSound('difficult.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 3) {
-    playSound('itsallhere.wav', houseName);
+    playSound('itsallhere.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 4) {
-    playSound('rightok.wav', houseName);
+    playSound('rightok.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else {
-    playSound('wheretoputyou.wav', houseName);
+    playSound('wheretoputyou.wav', houseName, nameInput, houseNumber, houseArray);
   }
 }
 
 
 function clickOK() {
+  result.hidden = true;
   let nameInput = document.getElementById('name').value;
 
   do {

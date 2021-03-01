@@ -33,6 +33,7 @@ function addtohouse(houseNumber) {
 
 function resetName() {
   document.getElementById("name").value = "";
+  result.hidden = true;
 }
 
 function addBlankRowToTable() {
@@ -43,6 +44,10 @@ function addBlankRowToTable() {
     cell.innerHTML = "";
   }
 }
+// function PlaySound() {
+//   var sound = document.getElementById("sound1");
+//   sound.Play();
+// }
 
 function updateCell(value, i, j) {
   let table = document.getElementById("table");
@@ -59,13 +64,49 @@ function updateCell(value, i, j) {
 
 function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
   console.log(houseName);
-  // document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
+  document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
   houseArray.push(nameInput);
   // document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
-  //addBlankRowToTable();
   updateCell(nameInput, houseArray.length, houseNumber);
   resetName();
+  stall(houseName);
 }
+
+function playSound(sound1, houseName) {
+  let audio = new Audio(sound1);
+  audio.play();
+  audio.addEventListener('ended', function () {
+    let result = document.getElementById("result");
+    result.classList.add("result");
+    result.hidden = false;
+    window.setTimeout(function () {
+      let soundFile = houseName.toLowerCase() + '.wav';
+      let audio = new Audio(soundFile);
+      audio.play();
+    }, 1000);
+  });
+
+}
+
+function stall(houseName) {
+  audioNumber = Math.floor(Math.random() * 5) + 1;
+  if (audioNumber === 1) {
+    playSound('ahright.wav', houseName);
+  }
+  else if (audioNumber === 2) {
+    playSound('difficult.wav', houseName);
+  }
+  else if (audioNumber === 3) {
+    playSound('itsallhere.wav', houseName);
+  }
+  else if (audioNumber === 4) {
+    playSound('rightok.wav', houseName);
+  }
+  else {
+    playSound('wheretoputyou.wav', houseName);
+  }
+}
+
 
 function clickOK() {
   let nameInput = document.getElementById('name').value;
@@ -80,6 +121,7 @@ function clickOK() {
 
   if (houseNumber === 1) {
     allocateHouse("Hufflepuff", hufflepuffs, "Hufflepuffs", nameInput, houseNumber - 1);
+
     // console.log("Hufflepuff");
     // document.getElementById("result").innerHTML = nameInput + " you are in Hufflepuff house";
     // hufflepuffs.push(nameInput);

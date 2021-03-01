@@ -1,9 +1,4 @@
-table, td {
-  border: 1px solid black;
-  width: 400px;
-  height: 15px;
-  text-align: center;
-}
+
 #arrayToGuess {
 font-size: 50px; 
 height: 30px;
@@ -55,14 +50,14 @@ padding-top: 140px;
 }
 
 
-#result div {
+.result div {
   font-size: 20pt;
   color: red;
   position: relative;
-  animation: delayResult 5s ease-in 5s;
+  animation: delayResult 5s ease-in 2s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 5s;
+  animation-duration: 2s;
   padding-bottom: 200pt;
 }
 
@@ -76,7 +71,7 @@ padding-top: 140px;
   background-color: black;
 }
 
-td#Hufflepuffs div {
+td#Hufflepuffs {
   color: yellow;
   animation: delayResult 5s ease-in 5s;
   animation-name: fade;
@@ -84,7 +79,7 @@ td#Hufflepuffs div {
   animation-duration: 10s;
 }
 
-td#Slytherins div {
+td#Slytherins {
   color:green;
   animation: delayResult 5s ease-in 5s;
   animation-name: fade;
@@ -92,7 +87,7 @@ td#Slytherins div {
   animation-duration: 10s;
 }
 
-td#Ravenclaws div {
+td#Ravenclaws {
   color: blue;
   animation: delayResult 5s ease-in 5s;
   animation-name: fade;
@@ -100,7 +95,15 @@ td#Ravenclaws div {
   animation-duration: 10s;
 }
 
-td#Gryffindors div {
+td#Gryffindors {
+  color: red;
+  animation: delayResult 5s ease-in 5s;
+  animation-name: fade;
+  animation-fill-mode: both;
+  animation-duration: 10s;
+}
+
+td {
   color: red;
   animation: delayResult 5s ease-in 5s;
   animation-name: fade;
@@ -112,6 +115,10 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 15px;
+}
+
+#toHide {
+  padding-bottom: 10pt;
 }
 
 caption {

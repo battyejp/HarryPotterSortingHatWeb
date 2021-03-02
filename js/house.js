@@ -10,7 +10,7 @@ class House {
         this.children.push(child);
     }
 
-    isHouseFull(){
+    isHouseFull() {
         return this.children.length == this.totalAllowedInHouse;
     }
 }

@@ -1,12 +1,5 @@
 
-#arrayToGuess {
-font-size: 50px; 
-height: 30px;
-padding-top: 140px;
-}
-
 @keyframes spin {
-
   from {
     transform: rotateY(0deg);
   }
@@ -15,13 +8,6 @@ padding-top: 140px;
   }
 }
 
-/*  The element to apply the animation to */
-/* div {
-  width: 100px;
-  height: 100px;
-  animation-name: hat;
-  animation: spin 6s infinite linear;
-} */
 .image {
   padding-right: 400px;
   float: right;
@@ -43,10 +29,10 @@ padding-top: 140px;
 @keyframes fade{
   0% {
     opacity: 0;
-}
+  }
   100%{
     opacity: 1;
-}
+  }
 }
 
 
@@ -60,12 +46,6 @@ padding-top: 140px;
   animation-duration: 2s;
   padding-bottom: 200pt;
 }
-
-  #return {
-  font-size: 20pt;
-  color: red;
-}
-
 
 .houses {
   background-color: black;
@@ -115,12 +95,4 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 15px;
-}
-
-#toHide {
-  padding-bottom: 10pt;
-}
-
-caption {
-  text-align: left;
 }

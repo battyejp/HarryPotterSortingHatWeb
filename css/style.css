@@ -124,3 +124,31 @@ table, th, td {
 caption {
   text-align: left;
 }
+
+/* Hat */
+
+#spinner {
+  animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+#stage {
+  perspective: 1200px;
+  margin: 20px auto;
+}
+
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}

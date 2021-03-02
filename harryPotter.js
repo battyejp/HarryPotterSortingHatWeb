@@ -15,6 +15,9 @@ function clickOKNumber() {
   totalInHouse = document.getElementById('numberOfBeavers').value / 4;
   totalInHouse = Math.ceil(totalInHouse);
   hideElements(true);
+  for (let j = 0; j < totalInHouse; j++) {
+    addBlankRowToTable();
+  }
 }
 
 function isHouseFull(houseNumber) {

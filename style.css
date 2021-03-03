@@ -28,11 +28,6 @@
   transform: translate(-50%, -50%);
 }
 
-@keyframes delayResult {
-  from {left: 0px;}
-  to {left: 300px;}
-}
-
 @keyframes fade{
   0% {
     opacity: 0;
@@ -58,7 +53,7 @@
   opacity: 0;
   color:red;
   position: relative;
-  padding-bottom: 200pt;
+  padding-bottom: 10pt;
 }
 
 .alternative div {
@@ -70,7 +65,7 @@
   animation-name: fadeInAndOut;
   animation-fill-mode: both;
   animation-duration: 10s;
-  padding-bottom: 200pt;
+  padding-bottom: 10pt;
 }
 
   #return {
@@ -136,3 +131,31 @@ table, th, td {
 caption {
   text-align: left;
 }
+
+/* Hat */
+
+#spinner {
+  animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+#stage {
+  perspective: 1200px;
+  margin: 20px auto;
+}
+
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+} 

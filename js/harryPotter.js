@@ -7,6 +7,10 @@ let gryffindors = [];
 let houseNumber = "";
 hideElements(false);
 
+document.getElementById("result").innerHTML = " you are in ";
+let x = document.getElementById("result");
+x.classList.add("result");
+
 function hideElements(flag) {
   document.getElementById("toHide").hidden = flag;
 }
@@ -15,6 +19,9 @@ function clickOKNumber() {
   totalInHouse = document.getElementById('numberOfBeavers').value / 4;
   totalInHouse = Math.ceil(totalInHouse);
   hideElements(true);
+  for (let j = 0; j < totalInHouse; j++) {
+    addBlankRowToTable();
+  }
 }
 
 function isHouseFull(houseNumber) {
@@ -56,8 +63,8 @@ function showHouse(houseName, nameInput, houseNumber, houseArray) {
   document.getElementById("result").innerHTML = "<div>" + nameInput + " you are in " + houseName + " house</div>";
   updateCell(nameInput, houseNumber, houseArray.length);
   let result = document.getElementById("result");
-  result.classList.add("result");
-  result.hidden = false;
+  result.classList.remove("result");
+  result.classList.add("alternative");
   resetName();
 }
 
@@ -102,7 +109,7 @@ function playAudio(houseName, nameInput, houseNumber, houseArray) {
 
 
 function clickOK() {
-  result.hidden = true;
+  // result.hidden = true;
   let nameInput = document.getElementById('name').value;
 
   do {

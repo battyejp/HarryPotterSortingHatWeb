@@ -25,12 +25,6 @@ function clickOKNumber() {
 }
 
 function isHouseFull(houseNumber) {
-  // if (houseTotals[houseNumber] < totalInHouse) {
-  //   return true;S
-  // }
-  // else {
-  //   return false;
-  // }
   return houseTotals[houseNumber - 1] == totalInHouse;
 }
 
@@ -51,10 +45,6 @@ function addBlankRowToTable() {
     cell.innerHTML = "";
   }
 }
-// function PlaySound() {
-//   var sound = document.getElementById("sound1");
-//   sound.Play();
-// }
 
 function updateCell(value, j, i) {
   let table = document.getElementById("table");
@@ -81,7 +71,6 @@ function showHouse(houseName, nameInput, houseNumber, houseArray) {
 function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
   console.log(houseName);
   houseArray.push(nameInput);
-  // document.getElementById(houseId).innerHTML = "<div>" + houseArray.join('</br>') + "</div>";
   playAudio(houseName, nameInput, houseNumber, houseArray);
 }
 
@@ -91,7 +80,7 @@ function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
   audio.addEventListener('ended', function () {
     window.setTimeout(function () {
       showHouse(houseName, nameInput, houseNumber, houseArray);
-      let soundFile = houseName.toLowerCase() + '.wav';
+      let soundFile = 'audio/' + houseName.toLowerCase() + '.wav';
       let audio = new Audio(soundFile);
       audio.play();
     }, 1000);
@@ -102,19 +91,19 @@ function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
 function playAudio(houseName, nameInput, houseNumber, houseArray) {
   audioNumber = Math.floor(Math.random() * 5) + 1;
   if (audioNumber === 1) {
-    playSound('ahright.wav', houseName, nameInput, houseNumber, houseArray);
+    playSound('audio/ahright.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 2) {
-    playSound('difficult.wav', houseName, nameInput, houseNumber, houseArray);
+    playSound('audio/difficult.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 3) {
-    playSound('itsallhere.wav', houseName, nameInput, houseNumber, houseArray);
+    playSound('audio/itsallhere.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else if (audioNumber === 4) {
-    playSound('rightok.wav', houseName, nameInput, houseNumber, houseArray);
+    playSound('audio/rightok.wav', houseName, nameInput, houseNumber, houseArray);
   }
   else {
-    playSound('wheretoputyou.wav', houseName, nameInput, houseNumber, houseArray);
+    playSound('audio/wheretoputyou.wav', houseName, nameInput, houseNumber, houseArray);
   }
 }
 
@@ -133,12 +122,6 @@ function clickOK() {
 
   if (houseNumber === 1) {
     allocateHouse("Hufflepuff", hufflepuffs, "Hufflepuffs", nameInput, houseNumber - 1);
-
-    // console.log("Hufflepuff");
-    // document.getElementById("result").innerHTML = nameInput + " you are in Hufflepuff house";
-    // hufflepuffs.push(nameInput);
-    // document.getElementById("Hufflepuffs").innerHTML = hufflepuffs.join('</p> <p>');
-    // resetName();
   }
   else if (houseNumber === 2) {
     allocateHouse("Ravenclaw", ravenclaws, "Ravenclaws", nameInput, houseNumber - 1);

@@ -1,10 +1,3 @@
-
-#arrayToGuess {
-font-size: 50px; 
-height: 30px;
-padding-top: 140px;
-}
-
 @keyframes spin {
 
   from {
@@ -49,15 +42,34 @@ padding-top: 140px;
 }
 }
 
+@keyframes fadeInAndOut{
+  0% {
+    opacity: 0;
+}
+75% { opacity: 1; 
+}
+  100%{
+    opacity: 0;
+}
+}
 
-.result div {
+.result {
   font-size: 20pt;
-  color: red;
+  opacity: 0;
+  color:red;
   position: relative;
-  animation: delayResult 5s ease-in 2s;
-  animation-name: fade;
+  padding-bottom: 200pt;
+}
+
+.alternative div {
+  font-size: 20pt;
+  opacity: 1;
+  color:blue;
+  position: relative;
+  animation: delayResult 5s ease-in 0s;
+  animation-name: fadeInAndOut;
   animation-fill-mode: both;
-  animation-duration: 2s;
+  animation-duration: 10s;
   padding-bottom: 200pt;
 }
 
@@ -105,10 +117,10 @@ td#Gryffindors {
 
 td {
   color: red;
-  animation: delayResult 5s ease-in 2s;
+  animation: delayResult 5s ease-in 10s;
   animation-name: fade;
   animation-fill-mode: both;
-  animation-duration: 2s;
+  animation-duration: 10s;
 }
 
 table, th, td {
